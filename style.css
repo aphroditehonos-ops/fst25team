@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(#0b1d3a, #000);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+.scene {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 🚗 FORMULA ARACI */
+.car {
+  position: absolute;
+  top: 45%;
+  left: -200px;
+  font-size: 110px;
+  animation: drive 4.5s ease-out forwards;
+}
+
+@keyframes drive {
+  0%   { left: -200px; }
+  60%  { left: 55%; }
+  100% { left: calc(100% - 220px); }
+}
+
+/* 📝 YAZI */
+.text-container {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+}
+
+.text-container h1 {
+  color: gold;
+  font-size: 48px;
+}
+
+.text-container h2 {
+  color: #ccc;
+  font-size: 26px;
+}
+
+.team-photo {
+  margin-top: 20px;
+  width: 220px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.4);
+}
+
+.show-text {
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ⛺ ÇADIRLAR */
+.tents {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  opacity: 0;
+}
+
+.show-tents {
+  opacity: 1;
+}
+
+.tent {
+  width: 180px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.borusan {
+  background: #003a8f;
+}
+
+.tosfed {
+  background: #0a7a3d;
+}
