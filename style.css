@@ -1,0 +1,79 @@
+
+body {
+  margin:0;
+  overflow:hidden;
+  background: linear-gradient(#0b1d3a, #000);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+.scene {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
+
+.car {
+  position: absolute;
+  top: 45%;
+  left: -200px;
+  font-size: 110px;
+  animation: drive 2s ease-in-out forwards;
+}
+
+@keyframes drive {
+  0% { left: -200px; }
+  50% { left: 45%; }
+  100% { left: 120%; }
+}
+
+.text-container {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+}
+
+.text-container h1 { color: gold; font-size: 48px; }
+.text-container h2 { color: #ccc; font-size: 26px; }
+
+.show-text {
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.tents {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  opacity: 0;
+}
+
+.tent {
+  transform: scaleY(0);
+}
+
+.show-tents .tent {
+  animation: openTent 1.5s forwards;
+}
+
+@keyframes openTent {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
